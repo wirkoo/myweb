@@ -15,7 +15,8 @@ class MenuList extends Component {
 
     return (
       <>
-        <i onClick={this.changeTester} className="menu-icon fab fa-react"></i>
+        <i onClick={this.changeTester} className="menu-icon fas fa-bars"></i>
+
         <ul className={style}>
           {nameOfItems.map((item) => (
             <li key={item.id} className="item">
