@@ -1,18 +1,31 @@
-import React from "react";
+import React, { Component } from "react";
 
-const MenuList = (props) => {
-  const { nameOfItems, styles } = props;
-  return (
-    <>
-      <ul className={styles}>
-        {nameOfItems.map((item) => (
-          <li key={item.id} className="item">
-            {item.name}
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-};
+class MenuList extends Component {
+  state = {
+    tester: 1,
+  };
+  changeTester = () => {
+    console.log(this.state.tester);
+    this.setState({ tester: this.state.tester + 1 });
+  };
+  render() {
+    const { nameOfItems } = this.props;
+    let style =
+      this.state.tester % 2 === 0 ? "items-container" : "items-container hide";
+
+    return (
+      <>
+        <i onClick={this.changeTester} className="menu-icon fab fa-react"></i>
+        <ul className={style}>
+          {nameOfItems.map((item) => (
+            <li key={item.id} className="item">
+              {item.name}
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+}
 
 export default MenuList;

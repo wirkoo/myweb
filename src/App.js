@@ -9,7 +9,8 @@ class App extends Component {
     menuItems: [
       { id: 1, name: "about me" },
       { id: 2, name: "Portfolio" },
-      { id: 3, name: "Contact" },
+      { id: 3, name: "Achievements" },
+      { id: 4, name: "Contact" },
     ],
     testimonials: [
       {
@@ -32,12 +33,18 @@ class App extends Component {
         date: "Dec 3, 2018 - Jan 23, 2019",
       },
     ],
+    hero: {
+      heading: "frontline web developer",
+      motive:
+        "Love to design beautiful and responsive websites with a lot of passion",
+      school: "Graduated from British Computer Society",
+    },
   };
   render() {
     return (
       <div className="App">
         <NavBar nameOfItems={this.state.menuItems} />
-        <Hero />
+        <Hero data={this.state.hero} />
         <Testimonials testimonials={this.state.testimonials} />
       </div>
     );

@@ -6,22 +6,19 @@ class Hero extends Component {
     return (
       <>
         <div className="hero">
-          <div className="hero__imageSection">
-            <div className="image__container">
-              <img
-                className="hero__image"
-                src={waleed}
-                alt="Frontline Developer Waleed"
-              />
-            </div>
+          <div className="image__container">
+            <img
+              className="hero__image"
+              src={waleed}
+              alt="Frontline Developer Waleed"
+            />
           </div>
+
           <div className="hero__aboutSection">
-            <h1 className="hero__heading">FrontLine Web Developer</h1>
+            <h1 className="hero__heading">{this.props.data.heading}</h1>
             <div className="hero__content">
-              <h3>Love to design Beautiful Websites</h3>
-              <p>
-                Graduated from <strong>British Computer Society</strong>
-              </p>
+              <h3>{this.props.data.motive}</h3>
+              <p>{this.props.data.school}</p>
             </div>
           </div>
         </div>

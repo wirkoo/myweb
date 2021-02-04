@@ -5,28 +5,17 @@ import Logo from "./logo";
 import React, { Component } from "react";
 
 class NavBar extends Component {
-  state = {
-    listStyle: "items-container hide",
-  };
+  state = {};
 
-  handleClick = () => {
-    let listStyle = this.state.listStyle;
-
-    if (listStyle === "items-container") {
-      listStyle = "items-container hide";
-      this.setState({ listStyle });
-    }
-  };
   render() {
     console.log(this.styles);
     const { nameOfItems } = this.props;
+
     return (
       <>
-        <div className="navbar">
+        <div className="navbar container">
           <span>
-            <Logo />
-            <MenuIcon onClick={this.handleClick} />
-            <MenuList styles={this.state.listStyle} nameOfItems={nameOfItems} />
+            <MenuList nameOfItems={nameOfItems} />
           </span>
         </div>
       </>
