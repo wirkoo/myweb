@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import { Link } from "react-router-dom";
 class MenuList extends Component {
   state = {
     tester: 1,
@@ -20,7 +21,7 @@ class MenuList extends Component {
         <ul className={style}>
           {nameOfItems.map((item) => (
             <li key={item.id} className="item">
-              {item.name}
+              <Link to={item.name}>{item.name}</Link>
             </li>
           ))}
         </ul>
